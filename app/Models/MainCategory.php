@@ -32,7 +32,7 @@ class MainCategory extends Model
 
     public function getPhotoAttribute($val)
     {
-        return ($val !== null) ? asset('assets/' . $val) : "";
+        return ($val !== null) ? asset('public/assets/' . $val) : "";
 
     }
 
