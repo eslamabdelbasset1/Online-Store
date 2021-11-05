@@ -9,9 +9,10 @@
             <li class="nav-item  open ">
                 <a href=""><i class="la la-home"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">لغات الموقع </span>
-{{--                    {{App\Models\Language::count()}}--}}
                     <span
-                        class="badge badge badge-info badge-pill float-right mr-2"></span>
+                        class="badge badge badge-info badge-pill float-right mr-2">
+                        {{App\Models\Language::count()}}
+                    </span>
                 </a>
 {{--                {{route('admin.languages')}}--}}
                 <ul class="menu-content">
@@ -31,7 +32,7 @@
 
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">
-{{--                         {{App\Models\MainCategory::defaultCategory() ->count()}}--}}
+                         {{App\Models\MainCategory::count()}}
                         </span>
                 </a>
                 <ul class="menu-content">
