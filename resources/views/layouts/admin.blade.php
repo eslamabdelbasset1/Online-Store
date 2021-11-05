@@ -169,7 +169,8 @@
         meridians: true,setCurrentTime: false
     });
 </script>
-<script src="{{ url('public/js/app.js') }}"></script>
 @yield('script')
+
+<script src="{{ url('assets/js/app.js') }}"></script>
 </body>
 </html>
