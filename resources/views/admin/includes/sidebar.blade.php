@@ -14,13 +14,12 @@
                         {{App\Models\Language::count()}}
                     </span>
                 </a>
-{{--                {{route('admin.languages')}}--}}
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
+                    <li class="active"><a class="menu-item" href="{{route('admin.languages')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
-{{--                    {{route('admin.languages.create')}}--}}
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
+
+                    <li><a class="menu-item" href="{{route('admin.languages.create')}}" data-i18n="nav.dash.crypto">أضافة
                             لغة جديده </a>
                     </li>
                 </ul>
