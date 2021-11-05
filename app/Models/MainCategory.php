@@ -18,4 +18,11 @@ class MainCategory extends Model
     {
         return $query->where('active', 1);
     }
+
+    public function scopeSelection($query)
+    {
+
+        return $query->select('id', 'translation_lang', 'name', 'slug', 'photo', 'active', 'translation_of');
+    }
+
 }

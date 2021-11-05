@@ -35,12 +35,10 @@
                         </span>
                 </a>
                 <ul class="menu-content">
-{{--                    {{route('admin.maincategories')}}--}}
-                    <li class="active"><a class="menu-item" href=""
+                    <li class="active"><a class="menu-item" href="{{route('admin.maincategories')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
-{{--                    {{route('admin.maincategories.create')}}--}}
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
+                    <li><a class="menu-item" href="{{route('admin.maincategories.create')}}" data-i18n="nav.dash.crypto">أضافة
                              قسم جديد </a>
                     </li>
                 </ul>
