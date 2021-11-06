@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LanguagesController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\MainCategoriesController;
+use App\Http\Controllers\VendorsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,24 +21,19 @@ define('PAGINATION_COUNT',10);
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function () {
     Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
 
-
     ######################### Begin Languages Route ########################
     Route::group(['prefix' => 'languages'], function () {
         Route::get('/',[LanguagesController::class, 'index']) -> name('admin.languages');
         Route::get('create',[LanguagesController::class, 'create']) -> name('admin.languages.create');
         Route::post('store',[LanguagesController::class, 'store']) -> name('admin.languages.store');
-
         Route::get('edit/{id}',[LanguagesController::class, 'edit']) -> name('admin.languages.edit');
         Route::post('update/{id}',[LanguagesController::class, 'update']) -> name('admin.languages.update');
-
         Route::get('delete/{id}',[LanguagesController::class, 'destroy']) -> name('admin.languages.delete');
-
-
     });
     ######################### End Languages Route ########################
 
 
-    ######################### Begin Main Categoris Routes ########################
+    ######################### Begin Main Categories Routes ########################
     Route::group(['prefix' => 'main_categories'], function () {
         Route::get('/',[MainCategoriesController::class, 'index']) -> name('admin.maincategories');
         Route::get('create',[MainCategoriesController::class, 'create']) -> name('admin.maincategories.create');
@@ -46,9 +42,19 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
         Route::post('update/{id}',[MainCategoriesController::class, 'update']) -> name('admin.maincategories.update');
         Route::get('delete/{id}',[MainCategoriesController::class, 'destroy']) -> name('admin.maincategories.delete');
         Route::get('changeStatus/{id}',[MainCategoriesController::class, 'status']) -> name('admin.maincategories.status');
-
     });
-    ######################### End  Main Categoris Routes  ########################
+    ######################### End  Main Categories Routes  ########################
+
+    ######################### Begin vendors Routes ########################
+    Route::group(['prefix' => 'vendors'], function () {
+        Route::get('/',[VendorsController::class, 'index']) -> name('admin.vendors');
+        Route::get('create',[VendorsController::class, 'create']) -> name('admin.vendors.create');
+        Route::post('store',[VendorsController::class, 'store']) -> name('admin.vendors.store');
+        Route::get('edit/{id}',[VendorsController::class, 'edit']) -> name('admin.vendors.edit');
+        Route::post('update/{id}',[VendorsController::class, 'update']) -> name('admin.vendors.update');
+        Route::get('delete/{id}',[VendorsController::class, 'destroy']) -> name('admin.vendors.delete');
+    });
+    ######################### End  vendors Routes  ########################
 });
 
 

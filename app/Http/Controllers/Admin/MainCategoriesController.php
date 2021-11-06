@@ -136,7 +136,6 @@ class MainCategoriesController extends Controller
                     ]);
             }
 
-
             return redirect()->route('admin.maincategories')->with(['success' => 'تم ألتحديث بنجاح']);
         } catch (\Exception $ex) {
 
