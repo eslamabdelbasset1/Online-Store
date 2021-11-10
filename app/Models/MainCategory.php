@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Observers\MainCategoryObserver;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,11 +14,11 @@ class MainCategory extends Model
         'translation_lang', 'translation_of', 'name', 'slug', 'photo', 'active', 'created_at', 'updated_at'
     ];
 
-//    protected static function boot()
-//    {
-//        parent::boot();
-//        MainCategory::observe(MainCategoryObserver::class);
-//    }
+    protected static function boot()
+    {
+        parent::boot();
+        MainCategory::observe(MainCategoryObserver::class);
+    }
 
     public function scopeActive($query)
     {
