@@ -157,8 +157,8 @@ class MainCategoriesController extends Controller
                 return redirect()->route('admin.maincategories')->with(['error' => 'لأ يمكن حذف هذا القسم  ']);
             }
 
-            $image = Str::after($maincategory->photo, 'assets/');
-            $image = base_path('assets/' . $image);
+            $image = Str::after($maincategory->photo, 'public/assets/');
+            $image = base_path('public/assets/' . $image);
             unlink($image); //delete from folder
 
             $maincategory->delete();

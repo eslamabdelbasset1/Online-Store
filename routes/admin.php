@@ -4,7 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\LanguagesController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\MainCategoriesController;
-use App\Http\Controllers\VendorsController;
+use App\Http\Controllers\Admin\VendorsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,8 +56,6 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
     });
     ######################### End  vendors Routes  ########################
 });
-
-
 
 Route::group(['namespace' => 'Admin', 'middleware' => 'guest:admin'], function () {
     Route::get('login', [LoginController::class, 'getLogin'])->name('get.admin.login');
