@@ -21,9 +21,21 @@ class Vendor extends Model
 
     }
 
+    public function scopeActive($query)
+    {
+
+        return $query->where('active', 1);
+    }
+
     public function scopeSelection($query)
     {
         return $query->select('id', 'category_id','latitude','longitude', 'active', 'name', 'address', 'email', 'logo', 'mobile');
+    }
+
+    public function category()
+    {
+
+        return $this->belongsTo('App\Models\MainCategory', 'category_id', 'id');
     }
 
 }
