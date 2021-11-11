@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\LanguagesController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\MainCategoriesController;
 use App\Http\Controllers\Admin\VendorsController;
+use App\Http\Controllers\SubCategoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,21 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
         Route::get('changeStatus/{id}',[MainCategoriesController::class, 'changeStatus']) -> name('admin.maincategories.status');
     });
     ######################### End  Main Categories Routes  ########################
+
+
+    ######################### Begin Sub Categoris Routes ########################
+    Route::group(['prefix' => 'sub_categories'], function () {
+        Route::get('/',[SubCategoriesController::class, 'index']) -> name('admin.subcategories');
+        Route::get('create',[SubCategoriesController::class, 'create']) -> name('admin.subcategories.create');
+        Route::post('store',[SubCategoriesController::class, 'store']) -> name('admin.subcategories.store');
+        Route::get('edit/{id}',[SubCategoriesController::class, 'edit']) -> name('admin.subcategories.edit');
+        Route::post('update/{id}',[SubCategoriesController::class, 'update']) -> name('admin.subcategories.update');
+        Route::get('delete/{id}',[SubCategoriesController::class, 'destroy']) -> name('admin.subcategories.delete');
+        Route::get('changeStatus/{id}',[SubCategoriesController::class, 'changeStatus']) -> name('admin.subcategories.status');
+
+    });
+    ######################### End  Sub Categoris Routes  ########################
+
 
     ######################### Begin vendors Routes ########################
     Route::group(['prefix' => 'vendors'], function () {

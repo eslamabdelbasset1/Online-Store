@@ -31,7 +31,7 @@
 
                     <span
                         class="badge badge badge-danger badge-pill float-right mr-2">
-                         {{App\Models\MainCategory::count()}}
+                         {{App\Models\MainCategory::defaultCategory()->count()}}
                         </span>
                 </a>
                 <ul class="menu-content">
@@ -47,15 +47,13 @@
             <li class="nav-item"><a href=""><i class="la la-group"></i>
                     <span class="menu-title" data-i18n="nav.dash.main">الاقسام الفرعية   </span>
                     <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">400</span>
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{App\Models\SubCategory::defaultCategory()->count()}}</span>
                 </a>
                 <ul class="menu-content">
-{{--                    {{route('admin.subcategories')}}--}}
-                    <li class="active"><a class="menu-item" href=""
+                    <li class="active"><a class="menu-item" href=" {{route('admin.subcategories')}}"
                                           data-i18n="nav.dash.ecommerce"> عرض الكل </a>
                     </li>
-{{--                    {{route('admin.subcategories.create')}}--}}
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
+                    <li><a class="menu-item" href="{{route('admin.subcategories.create')}}" data-i18n="nav.dash.crypto">أضافة
                             قسم فرعي جديد </a>
                     </li>
                 </ul>

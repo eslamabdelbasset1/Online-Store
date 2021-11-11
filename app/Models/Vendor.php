@@ -20,7 +20,7 @@ class Vendor extends Model
 
     public function getLogoAttribute($val)
     {
-        return ($val !== null) ? asset('public/assets/' . $val) : "";
+        return ($val !== null) ? asset('assets/' . $val) : "";
 
     }
 

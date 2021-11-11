@@ -33,7 +33,7 @@ class MainCategory extends Model
 
     public function getPhotoAttribute($val)
     {
-        return ($val !== null) ? asset('public/assets/' . $val) : "";
+        return ($val !== null) ? asset('assets/' . $val) : "";
 
     }
 
@@ -60,9 +60,9 @@ class MainCategory extends Model
         return $this -> hasMany('App\Models\Vendor','category_id','id');
     }
 
-//    public  function subCategories(){
-//        return $this -> hasMany(SubCategory::class,'category_id','id');
-//    }
+    public  function subCategories(){
+        return $this -> hasMany(SubCategory::class,'category_id','id');
+    }
 
 
 
