@@ -37,14 +37,14 @@ class MainCategory extends Model
 
     }
 
+    public function scopeDefaultCategory($query){
+        return  $query -> where('translation_of',0);
+    }
+
     public function getActive()
     {
         return $this->active == 1 ? 'مفعل' : 'غير مفعل';
 
-    }
-
-    public function scopeDefaultCategory($query){
-        return  $query -> where('translation_of',0);
     }
 
 

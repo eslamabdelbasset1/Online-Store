@@ -9,7 +9,7 @@
                 <li class="nav-item">
                     <a class="navbar-brand" href="index.html">
                         <img class="brand-logo" alt="modern admin logo"
-                             src="{{asset('assets/admin/images/logo/logo.png')}}">
+                             src="{{asset('images/vendors/AQ6rOCV3VGGFj5d40ZGDQbuIKnAsCbEYbAuDP0DZ.jpg')}}">
                         <h3 class="brand-text">Modern Admin</h3>
                     </a>
                 </li>
